@@ -9,6 +9,6 @@ Built using
    * [console.table](https://www.npmjs.com/package/console.table)
 
 
-[Video demonstrating the various functions](https://streamable.com/59ulq)
+[Video demonstrating the various functions](https://streamable.com/la6by)
 
 (Video also available for download within the repository)
