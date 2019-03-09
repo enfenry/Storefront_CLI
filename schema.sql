@@ -36,5 +36,6 @@ CREATE TABLE departments (
 );
 
 INSERT INTO departments(department_name,product_sales, over_head_costs) 
-SELECT department_name, product_sales, FLOOR(RAND()*(4000))
+SELECT department_name, product_sales, FLOOR(RAND()*(1000))
 FROM products GROUP BY department_name;
+

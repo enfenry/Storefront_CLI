@@ -13,7 +13,8 @@ let connection = mysql.createConnection({
 
 connection.connect(function (err) {
     if (err) throw err;
-    runSupervisor();
+    // runSupervisor();
+    clearDepartments();
 });
 
 function runSupervisor() {
@@ -84,3 +85,21 @@ function createNewDepartment() {
                 });
         })
 };
+
+function updateDepartments() {
+    let query = "INSERT INTO departments(department_name,product_sales, over_head_costs) SELECT department_name, product_sales, FLOOR(RAND()*(1000)) FROM products GROUP BY department_name;";
+    connection.query(query,
+        function (err, res, fields) {
+            if (err) throw err;
+            runSupervisor();
+        });
+}
+
+function clearDepartments() {
+    let query = "DELETE FROM departments";
+    connection.query(query,
+        function (err, res, fields) {
+            if (err) throw err;
+            updateDepartments();
+        });
+}
