@@ -38,14 +38,14 @@ function runCustomer() {
             type: "input",
             message: "How many would you like to buy?"
         }]).then(function (input) {
-            checkQuantity(input.id, input.quantity);
+            checkQuantity(input.id, parseInt(input.quantity));
         });
 }
 
 function checkQuantity(id, quantity) {
     let query = "SELECT item_id, product_name, price, stock_quantity,product_sales FROM products WHERE ?";
     connection.query(query, { item_id: id }, function (err, res) {
-        if (quantity >= res[0].stock_quantity) {
+        if (quantity > res[0].stock_quantity) {
             console.log('');
             console.log('INSUFFICIENT QUANTITY!');
             console.log('');

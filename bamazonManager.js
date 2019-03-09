@@ -138,7 +138,7 @@ function addNewProduct() {
 function findQuantity(id,quantity) {
     let query = "SELECT item_id, product_name, price, stock_quantity, product_sales FROM products WHERE ?";
     connection.query(query, { item_id: id }, function (err, res) {
-        let newStock = res[0].stock_quantity + quantity;
+        let newStock = res[0].stock_quantity + parseInt(quantity);
         updateQuantity(id, newStock)
     })
 }
