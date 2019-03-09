@@ -2,7 +2,7 @@
 Assignment 11 - Amazon-like Storefront command line interface using MySQL
 
 Built using 
-   * [inquirer](https://www.npmjs.com/package/inquirer)
+   * [Inquirer.js](https://www.npmjs.com/package/inquirer)
 
    * [mysql-npm](https://www.npmjs.com/package/mysql)
 
